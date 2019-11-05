@@ -25,6 +25,7 @@ class ValidRequestObject:
     def __bool__(self):
         return True
 
+
 class StationListRequestObject(ValidRequestObject):
     accepted_code_length = 3
     accepted_filters = ['continent__eq', 'tz_city__eq', 'codes_list']
@@ -50,5 +51,3 @@ class StationListRequestObject(ValidRequestObject):
         if invalid_req.has_errors():
             return invalid_req
         return cls(filters=adict.get('filters', None))
-
-
