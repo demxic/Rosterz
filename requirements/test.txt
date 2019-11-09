@@ -1,0 +1,6 @@
+-r prod.txt
+pytest==5.2.2
+tox
+coverage
+pytest-cov
+pytest-flask

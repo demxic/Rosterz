@@ -6,8 +6,11 @@
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tripper" isTestSource="false" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="Python 3.7 (rosters-laptop-venv)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+  <component name="PackageRequirementsSettings">
+    <option name="requirementsPath" value="C:\Users\Xico\Google Drive\PycharmProjects\Rosterz\requirements\test.txt" />
   </component>
   <component name="TestRunnerService">
     <option name="projectConfiguration" value="pytest" />
