@@ -2,7 +2,19 @@ import pytz
 
 
 class Station(object):
-    """Defines an airport operated by an airline"""
+    """ Create airports using the Flyweight pattern
+    Try using the weakref.WeakValueDictionary() if  garbage-collection concerned
+    for our simple app, not needed
+    """
+    _stations = dict()
+
+    def __new__(cls, code: str, timezone, viaticum):
+        station = cls._stations.get(code)
+        if not station:
+            station = super().__new__(cls)
+            if timezone:
+                cls._stations[code] = station
+        return station
 
     def __init__(self, code: str, timezone, viaticum=None):
         self.code = code

@@ -46,3 +46,10 @@ def test_station_model_comparison():
     station1 = Station.from_dict(station_dict)
     station2 = Station.from_dict(station_dict)
     assert station1 == station2
+
+
+def test_station_is_singleton():
+    station_dict = {'code': 'MEX', 'continent': 'America', 'tz_city': 'Mexico_City', 'viaticum': None}
+    station1 = Station.from_dict(station_dict)
+    station2 = Station.from_dict(station_dict)
+    assert station1 is station2
