@@ -29,10 +29,10 @@ class Station(object):
                    viaticum=a_dict['viaticum'])
 
     def to_dict(self):
-        return dict(iata_code=self.code, zone=self.timezone, viaticum=self.viaticum)
+        return dict(code=self.code, continent=self.continent, tz_city=self.tz_city, viaticum=self.viaticum)
 
     def __eq__(self, other: 'Station'):
-        return self.to_dict() == other.to_dict()
+        return self.to_dict == other.to_dict
 
     def __str__(self):
         return "{}".format(self.code)
