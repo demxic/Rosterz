@@ -1,4 +1,3 @@
-import pytz
 from tripper.domain.elements import Route
 
 
