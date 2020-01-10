@@ -19,17 +19,16 @@ class Station(object):
     def __init__(self, code: str, timezone, viaticum=None):
         self.code = code
         self.timezone = timezone
-        self.continent, self.tz_city = timezone.zone.split('/')
         self.viaticum = viaticum
 
     @classmethod
     def from_dict(cls, a_dict):
         return cls(code=a_dict['code'],
-                   timezone=pytz.timezone(a_dict['continent'] + '/' + a_dict['tz_city']),
+                   timezone=a_dict['timezone'],
                    viaticum=a_dict['viaticum'])
 
     def to_dict(self):
-        return dict(code=self.code, continent=self.continent, tz_city=self.tz_city, viaticum=self.viaticum)
+        return dict(code=self.code, timezone=self.timezone, viaticum=self.viaticum)
 
     def __eq__(self, other: 'Station'):
         return self.to_dict == other.to_dict
